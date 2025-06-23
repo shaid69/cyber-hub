@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cyber Hub - Courses</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans transition-colors duration-500">
+
+  <header class="bg-gradient-to-r from-cyan-600 to-violet-700 sticky top-0 z-50 shadow-lg flex justify-between items-center px-6 py-4">
+    <a href="index.html" class="flex items-center space-x-3">
+      <img src="assets/images/cyberhub-logo.png" alt="Cyber Hub Logo" class="h-10 w-10 object-contain" />
+      <h1 class="text-white font-mono text-3xl font-bold tracking-widest">CYBER HUB</h1>
+    </a>
+    <nav class="hidden md:flex space-x-8 text-white font-semibold text-lg">
+      <a href="index.html" class="hover:text-cyan-300">Home</a>
+      <a href="blog.html" class="hover:text-cyan-300">Blog</a>
+      <a href="course.html" class="hover:text-cyan-300" aria-current="page">Courses</a>
+      <a href="enroll.html" class="bg-cyan-400 hover:bg-violet-400 px-4 py-2 rounded text-gray-900">Enroll</a>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <h1 class="text-4xl font-extrabold text-cyan-400 mb-12 text-center">Cyber Hub Course Catalog</h1>
+
+    <!-- Course Card Template -->
+    <section class="mb-12 bg-gray-800 rounded-xl p-8 shadow-md hover:shadow-cyan-400 transition-shadow">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-3xl font-bold text-cyan-300">Python Programming</h2>
+        <span class="bg-blue-600 px-3 py-1 rounded-full text-sm font-bold text-white">Beginner–Advanced</span>
+      </div>
+      <p class="text-gray-300 mb-2">Master Python from scratch including OOP, APIs, and Data Science.</p>
+      <p class="text-green-400 font-semibold">৳3,500 <span class="line-through text-gray-400 ml-2">৳3,900</span></p>
+      <span class="inline-block bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse mt-1">10% OFF – Limited Time!</span>
+      <ol class="list-decimal list-inside text-gray-300 mt-4 space-y-1">
+        <li>Python Basics & Syntax</li>
+        <li>Functions & OOP</li>
+        <li>Flask Web Development</li>
+        <li>APIs & Data Analysis</li>
+        <li>Final Project</li>
+      </ol>
+    </section>
+
+    <section class="mb-12 bg-gray-800 rounded-xl p-8 shadow-md hover:shadow-cyan-400 transition-shadow">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-3xl font-bold text-cyan-300">Cybersecurity & Ethical Hacking</h2>
+        <span class="bg-red-600 px-3 py-1 rounded-full text-sm font-bold text-white">Intermediate–Advanced</span>
+      </div>
+      <p class="text-gray-300 mb-2">Ethical hacking, OSINT, malware analysis, and real-world attack simulation.</p>
+      <p class="text-green-400 font-semibold">৳4,000 <span class="line-through text-gray-400 ml-2">৳4,500</span></p>
+      <span class="inline-block bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse mt-1">10% OFF – Limited Time!</span>
+      <ol class="list-decimal list-inside text-gray-300 mt-4 space-y-1">
+        <li>Ethical Hacking Basics</li>
+        <li>Scanning & Exploits</li>
+        <li>OSINT & Web Attacks</li>
+        <li>Malware & Reverse Engineering</li>
+        <li>Practice Labs</li>
+      </ol>
+    </section>
+
+    <section class="mb-12 bg-gray-800 rounded-xl p-8 shadow-md hover:shadow-cyan-400 transition-shadow">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-3xl font-bold text-cyan-300">Networking Fundamentals</h2>
+        <span class="bg-yellow-500 px-3 py-1 rounded-full text-sm font-bold text-white">Beginner–Intermediate</span>
+      </div>
+      <p class="text-gray-300 mb-2">Build your foundation in TCP/IP, subnetting, Wireshark, and firewalls.</p>
+      <p class="text-green-400 font-semibold">৳3,000 <span class="line-through text-gray-400 ml-2">৳3,300</span></p>
+      <span class="inline-block bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse mt-1">10% OFF – Limited Time!</span>
+      <ol class="list-decimal list-inside text-gray-300 mt-4 space-y-1">
+        <li>OSI Model</li>
+        <li>IP Addressing</li>
+        <li>Routing & Switching</li>
+        <li>Wireshark & VPNs</li>
+        <li>Security Concepts</li>
+      </ol>
+    </section>
+
+    <!-- Enroll Button with Gateway -->
+    <section class="text-center mt-10">
+      <a href="https://payment.cyberhub.com" target="_blank" class="inline-block bg-cyan-400 hover:bg-violet-400 text-gray-900 font-bold py-4 px-10 rounded-lg shadow-lg transition">
+        Enroll via Payment Gateway
+      </a>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="text-center mt-10">
+      <h3 class="text-lg text-gray-300 font-semibold mb-2">Accepted Payment Methods</h3>
+      <div class="flex justify-center space-x-5 items-center">
+        <img src="assets/icons/visa.png" alt="Visa" class="h-8">
+        <img src="assets/icons/mastercard.png" alt="MasterCard" class="h-8">
+        <img src="assets/icons/bkash.png" alt="bKash" class="h-8">
+        <img src="assets/icons/nagad.png" alt="Nagad" class="h-8">
+        <img src="assets/icons/rocket.png" alt="Rocket" class="h-8">
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="mt-20">
+      <h2 class="text-3xl text-center font-bold text-cyan-300 mb-6">Course Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-gray-800 text-white rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-gray-700 text-cyan-300 text-left">
+              <th class="py-3 px-4">Course</th>
+              <th class="py-3 px-4">Level</th>
+              <th class="py-3 px-4">Key Topics</th>
+              <th class="py-3 px-4">Fee</th>
+              <th class="py-3 px-4">Discount</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-300">
+            <tr class="border-b border-gray-600 hover:bg-gray-700">
+              <td class="py-3 px-4">Python Programming</td>
+              <td class="py-3 px-4">Beginner–Advanced</td>
+              <td class="py-3 px-4">OOP, Flask, Pandas</td>
+              <td class="py-3 px-4">৳3,500</td>
+              <td class="py-3 px-4 text-green-400 font-semibold">10% OFF</td>
+            </tr>
+            <tr class="border-b border-gray-600 hover:bg-gray-700">
+              <td class="py-3 px-4">Ethical Hacking</td>
+              <td class="py-3 px-4">Intermediate–Advanced</td>
+              <td class="py-3 px-4">OSINT, Exploits</td>
+              <td class="py-3 px-4">৳4,000</td>
+              <td class="py-3 px-4 text-green-400 font-semibold">10% OFF</td>
+            </tr>
+            <tr class="hover:bg-gray-700">
+              <td class="py-3 px-4">Networking</td>
+              <td class="py-3 px-4">Beginner–Intermediate</td>
+              <td class="py-3 px-4">TCP/IP, VPNs</td>
+              <td class="py-3 px-4">৳3,000</td>
+              <td class="py-3 px-4 text-green-400 font-semibold">10% OFF</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-6 bg-gray-800 text-gray-500 text-sm select-none">
+    &copy; 2025 Cyber Hub | Built by Shaid Mahamud
+  </footer>
+</body>
+</html>

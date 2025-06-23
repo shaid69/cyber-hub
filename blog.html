@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cyber Hub - Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans transition-colors duration-500">
+
+  <div id="lottie-bg" class="fixed inset-0 -z-10 opacity-20"></div>
+
+  <header class="bg-gradient-to-r from-cyan-600 to-violet-700 sticky top-0 z-50 shadow-lg flex justify-between items-center px-6 py-4">
+    <a href="index.html" aria-label="Cyber Hub" class="flex items-center space-x-3 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">
+      <img src="assets/images/cyberhub-logo.png" alt="Cyber Hub Logo" class="h-10 w-10 object-contain" />
+      <h1 class="text-white font-mono text-3xl font-bold tracking-widest glitch select-none">CYBER HUB</h1>
+    </a>
+    <nav id="nav-menu" class="hidden md:flex space-x-8 text-white font-semibold text-lg" role="navigation" aria-label="Primary navigation">
+      <a href="index.html" class="hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">Home</a>
+      <a href="blog.html" class="hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded" aria-current="page">Blog</a>
+      <a href="course.html" class="hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">Courses</a>
+      <a href="enroll.html" class="bg-cyan-400 hover:bg-violet-400 px-4 py-2 rounded font-semibold text-gray-900 transition-shadow shadow-md focus:outline-none focus:ring-2 focus:ring-violet-400">Enroll</a>
+      <a href="faq.html" class="hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">FAQ</a>
+    </nav>
+    <button id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+      </svg>
+    </button>
+    <button id="mode-toggle" aria-label="Toggle Light/Dark Mode" class="ml-4 text-white focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded" title="Toggle Light/Dark Mode">🌙</button>
+  </header>
+
+  <nav id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 flex flex-col items-center justify-center space-y-8 text-3xl font-bold text-cyan-400 hidden z-50" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-label">
+    <h2 id="mobile-menu-label" class="sr-only">Mobile menu</h2>
+    <a href="index.html" class="hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">Home</a>
+    <a href="blog.html" class="hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded" aria-current="page">Blog</a>
+    <a href="course.html" class="hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">Courses</a>
+    <a href="enroll.html" class="hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">Enroll</a>
+    <a href="faq.html" class="hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">FAQ</a>
+    <button id="mobile-menu-close" aria-label="Close menu" class="text-6xl text-gray-500 hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">×</button>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-6 py-16">
+
+    <h2 class="text-4xl font-bold mb-8 text-cyan-400 text-center">Latest Cybersecurity Articles</h2>
+
+    <div class="mb-10 max-w-md mx-auto">
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search articles..."
+        aria-label="Search articles"
+        class="w-full rounded-md px-4 py-3 bg-gray-800 border border-gray-700 text-gray-200 focus:ring-2 focus:ring-cyan-400 outline-none transition"
+      />
+    </div>
+
+    <section id="articles-container" class="space-y-8">
+      <!-- Articles will be inserted here -->
+    </section>
+
+    <nav id="pagination" class="flex justify-center space-x-3 mt-12" aria-label="Pagination"></nav>
+
+  </main>
+
+  <footer class="text-center py-6 bg-gray-800 text-gray-500 text-sm select-none">
+    &copy; 2025 Cyber Hub | Built by Shaid Mahamud | <a href="mailto:cyberhub@protonmail.com" class="text-cyan-400 hover:underline">Contact Us</a>
+  </footer>
+
+  <script>
+    // Navigation toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileClose = document.getElementById('mobile-menu-close');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileClose.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.add('hidden');
+    });
+
+    // Dark/Light mode toggle with persistence
+    const modeToggle = document.getElementById('mode-toggle');
+    const rootElement = document.documentElement;
+    const darkModeKey = 'cyberhub-dark-mode';
+
+    function setDarkMode(enabled) {
+      if (enabled) {
+        rootElement.classList.add('dark');
+        document.body.classList.add('bg-gray-900', 'text-gray-200');
+        modeToggle.textContent = '☀️';
+      } else {
+        rootElement.classList.remove('dark');
+        document.body.classList.remove('bg-gray-900', 'text-gray-200');
+        modeToggle.textContent = '🌙';
+      }
+      localStorage.setItem(darkModeKey, enabled ? 'true' : 'false');
+    }
+
+    // Initialize mode on page load
+    const savedMode = localStorage.getItem(darkModeKey);
+    if (savedMode === 'true') {
+      setDarkMode(true);
+    } else {
+      setDarkMode(false);
+    }
+
+    modeToggle.addEventListener('click', () => {
+      const isDark = rootElement.classList.contains('dark');
+      setDarkMode(!isDark);
+    });
+
+    // Articles data
+    const articles = [
+      {
+        title: "Spam SMS Detection Using Machine Learning",
+        link: "posts/spam-sms.html",
+        summary: "Discover how AI helps detect spam messages to protect users and networks from phishing and scams.",
+        tags: ["AI", "Machine Learning", "Spam"],
+      },
+      {
+        title: "Understanding Phishing Attacks & Defense Strategies",
+        link: "posts/phishing.html",
+        summary: "Learn the psychology behind phishing and how to safeguard yourself from becoming a victim.",
+        tags: ["Phishing", "Cybersecurity", "Defense"],
+      },
+      {
+        title: "Basics of Network Security",
+        link: "#",
+        summary: "An introductory guide on how to secure networks against unauthorized access and attacks.",
+        tags: ["Networking", "Security"],
+      },
+      {
+        title: "Top Ethical Hacking Tools in 2025",
+        link: "#",
+        summary: "Explore the latest tools used by ethical hackers to test and improve security systems.",
+        tags: ["Ethical Hacking", "Tools"],
+      },
+      {
+        title: "Cryptography Essentials for Beginners",
+        link: "#",
+        summary: "Understand the basics of cryptography and how it protects data confidentiality and integrity.",
+        tags: ["Cryptography", "Encryption"],
+      }
+    ];
+
+    const articlesPerPage = 3;
+    let currentPage = 1;
+    let filteredArticles = [...articles];
+
+    const articlesContainer = document.getElementById('articles-container');
+    const pagination = document.getElementById('pagination');
+    const searchInput = document.getElementById('search-input');
+
+    function renderArticles(page = 1) {
+      articlesContainer.innerHTML = '';
+      const start = (page - 1) * articlesPerPage;
+      const end = start + articlesPerPage;
+      const pageArticles = filteredArticles.slice(start, end);
+
+      if (pageArticles.length === 0) {
+        articlesContainer.innerHTML = `<p class="text-center text-gray-400">No articles found.</p>`;
+        pagination.innerHTML = '';
+        return;
+      }
+
+      pageArticles.forEach(({title, link, summary, tags}) => {
+        const article = document.createElement('article');
+        article.className = "mb-8 p-6 bg-gray-800 rounded-xl shadow-md hover:shadow-cyan-400 transition-shadow";
+
+        article.innerHTML = `
+          <h3 class="text-2xl font-bold mb-2">
+            <a href="${link}" class="hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded">${title}</a>
+          </h3>
+          <p class="mb-3">${summary}</p>
+          <div class="flex flex-wrap gap-2">
+            ${tags.map(tag => `<span class="text-xs bg-cyan-700 text-cyan-200 rounded-full px-3 py-1 select-none">${tag}</span>`).join('')}
+          </div>
+        `;
+        articlesContainer.appendChild(article);
+      });
+
+      renderPagination(page);
+    }
+
+    function renderPagination(page) {
+      pagination.innerHTML = '';
+      const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+      if (totalPages <= 1) return;
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = `px-4 py-2 rounded ${i === page ? 'bg-cyan-400 text-gray-900 font-bold' : 'bg-gray-700 hover:bg-cyan-400 hover:text-gray-900'} focus:outline-none focus:ring-2 focus:ring-cyan-300`;
+        btn.setAttribute('aria-label', `Go to page ${i}`);
+        btn.disabled = (i === page);
+        btn.addEventListener('click', () => {
+          currentPage = i;
+          renderArticles(i);
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        pagination.appendChild(btn);
+      }
+    }
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      filteredArticles = articles.filter(a =>
+        a.title.toLowerCase().includes(query) ||
+        a.summary.toLowerCase().includes(query) ||
+        a.tags.some(tag => tag.toLowerCase().includes(query))
+      );
+      currentPage = 1;
+      renderArticles(currentPage);
+    });
+
+    renderArticles(currentPage);
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
